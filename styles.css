@@ -1,0 +1,344 @@
+/* Variables */
+:root {
+    --primary-color: #3D5A80;
+    --secondary-color: #1F1F1F;
+    --accent-color: #EE6C4D;
+    --text-color: #ffffff;
+    --badge-bg-color: #A0BABA;
+    --badge-text-color: #000000;
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: #212839;
+    color: var(--text-color);
+    padding-bottom: 100px;
+}
+
+h2 {
+    margin: 5px 15px;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+/* Header Styles */
+header {
+    margin-top: 50px;
+    padding: 0 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.header-icons {
+    display: flex;
+    gap: 18px;
+}
+
+
+.header-icons a {
+    color: #88B7D3;
+    text-decoration: none;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    background-color: #88B7D3;
+}
+
+.header-icons a:hover {
+    background-color: var(--accent-color);
+    animation: shake 0.5s;
+    box-shadow: 0 0 20px var(--accent-color);
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 0 0 5px var(--accent-color);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Flex Container for Boxes */
+.boxes {
+    padding: 0 86px;
+    display: grid;
+    gap: 0 50px;
+    grid-template-columns: calc(60% - 10px) calc(40% - 40px);
+    grid-template-rows: repeat(4, auto);
+}
+
+/* Box Styles */
+.bento-box {
+    border: 2px solid var(--text-color);
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 50px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.bento-box:hover {
+    transform: scale(1.02) rotate(2deg);
+    box-shadow: 5px 5px 10px var(--accent-color);
+}
+
+/* Specific Box Styles */
+#statementBox {
+    grid-column: 1;
+    max-height: 200px;
+    min-width: 280px;
+    background-image: linear-gradient(66deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#statementBox:hover {
+    transform: scale(1.02) rotate(-2deg);
+    box-shadow: 5px 5px 10px var(--accent-color);
+}
+
+#laptopBox {
+    grid-column: 2;
+    background-image: radial-gradient(circle at 50% 100%, var(--accent-color) 0%, var(--primary-color) 89%);
+    padding: 0;
+    min-width: 280px;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#keysBox {
+    grid-column: 1;
+    background-image: linear-gradient(252deg, var(--primary-color) 0%, var(--secondary-color) 66%);
+    min-width: 280px;
+}
+
+#keysBox ul {
+    padding-left: 40px;
+    font-weight: 300;
+    list-style-type: "- ";
+    list-style-position: inside;
+}
+
+#keysBox li {
+    margin-top: 4px;
+    text-indent: -30px;
+    padding-left: 20px;
+}
+
+#jsonBox {
+    grid-column: 2;
+    grid-row: 2 / -1;
+    padding: 30px;
+    background-image: linear-gradient(208deg, var(--primary-color) 0%, var(--secondary-color) 66%);
+    min-width: 280px;
+    height: fit-content;
+}
+
+#jsonBox:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+#jsonBox img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+}
+
+#experienceBox {
+    grid-column: 1;
+    background-image: linear-gradient(208deg, var(--primary-color) 0%, var(--secondary-color) 66%);
+    min-width: 280px;
+    font-weight: 300;
+}
+
+#experienceBox:hover {
+    transform: scale(1.02) rotate(-1deg);
+}
+
+/* Job Block Styles */
+.job-block {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+.job-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-details h2 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.job-details h5 {
+    font-size: 16px;
+    font-weight: 100;
+}
+
+#job-description {
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+#job-description h4 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#job-description ul {
+    list-style-type: "- ";
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+#job-description li {
+    margin-top: 4px;
+    text-indent: -30px;
+    padding-left: 20px;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.badge {
+    color: var(--badge-text-color);
+    background: var(--badge-bg-color);
+    border-radius: 13px;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Horizontal Rule */
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    width: 90%;
+    margin: 10px auto;
+}
+
+#portfolioBox {
+    grid-column: 1 / -1;
+    text-align: center;
+    background-image: linear-gradient(208deg, var(--primary-color) 0%, var(--secondary-color) 66%);
+    min-width: 280px;
+    font-weight: 300;
+}
+
+#portfolioBox:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .header-icons {
+        padding-right: 0;
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .boxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .badge {
+        font-size: small;
+        padding: 3px 8px;
+    }
+
+    #laptopBox {
+        order: 1;
+        width: 100%;
+    }
+
+    #statementBox {
+        order: 2;
+        font-size: 26px;
+    }
+
+    #keysBox {
+        order: 3;
+    }
+
+    #experienceBox {
+        order: 4;
+    }
+
+    #jsonBox {
+        order: 5;
+    }
+
+    #portfolioBox {
+        order: 6;
+    }
+
+    #jsonBox img {
+        width: 100%;
+    }
+}
+
+/* Media Query for Extra Small Screens */
+@media (max-width: 480px) {
+    .logo {
+        display: none; /* Hide the logo on extra small screens */
+    }
+}
