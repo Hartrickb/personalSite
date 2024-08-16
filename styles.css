@@ -51,14 +51,16 @@ header h1 {
 .header-icons a {
     color: #88B7D3;
     text-decoration: none;
-    font-size: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
     border-radius: 8px;
     background-color: #88B7D3;
+}
+
+.header-icons a img {
+    width: 60px;
+    height: 60px;
 }
 
 .header-icons a:hover {
@@ -140,6 +142,10 @@ header h1 {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+}
+
+#laptopBox img {
+    width: 200px;
 }
 
 #keysBox {
