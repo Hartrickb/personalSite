@@ -304,6 +304,20 @@ hr {
         align-items: center;
         justify-content: center;
         gap: 20px;
+        padding: 0px 10%;
+    }
+
+    .bento-box.visible {
+        transform: scale(1.02) rotate(1deg);
+        box-shadow: 5px 5px 10px var(--accent-color);
+    }
+
+    #statementBox.visible {
+        transform: scale(1.02) rotate(-1deg);
+    }
+
+    #experienceBox.visible {
+        transform: scale(1.02) rotate(-0.5deg);
     }
 
     .badge {
@@ -346,18 +360,5 @@ hr {
 @media (max-width: 480px) {
     .logo {
         display: none; /* Hide the logo on extra small screens */
-    }
-
-    .bento-box.visible {
-        transform: scale(1.02) rotate(1deg);
-        box-shadow: 5px 5px 10px var(--accent-color);
-    }
-
-    #statementBox.visible {
-        transform: scale(1.02) rotate(-1deg);
-    }
-
-    #experienceBox.visible {
-        transform: scale(1.02) rotate(-0.5deg);
     }
 }
