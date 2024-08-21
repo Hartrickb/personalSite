@@ -329,13 +329,28 @@ hr {
     padding: 20px;
 }
 
+.lunchDescription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #lunchFinder img {
     margin: 15px;
     width: 100%;
     border-radius: 16px;
     max-width: 300px;
     min-width: 100px;
-    
+}
+
+.lunchTechnologies {
+    list-style-type: '- ';
+    padding: 0;
+    text-align: start;
+}
+
+.lunchTechnologies li {
+    margin: 0 15px;
 }
 
 /* Media Query for Smaller Screens */
