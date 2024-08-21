@@ -19,6 +19,8 @@ body {
     background-color: #212839;
     color: var(--text-color);
     padding-bottom: 100px;
+    padding-left: 86px;
+    padding-right: 86px;
 }
 
 h2 {
@@ -30,7 +32,6 @@ h2 {
 /* Header Styles */
 header {
     margin-top: 50px;
-    padding: 0 86px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -90,7 +91,6 @@ header h1 {
 
 /* Flex Container for Boxes */
 .boxes {
-    padding: 0 86px;
     display: grid;
     gap: 0 50px;
     grid-template-columns: calc(60% - 10px) calc(40% - 40px);
@@ -277,10 +277,42 @@ hr {
     background-image: linear-gradient(208deg, var(--primary-color) 0%, var(--secondary-color) 66%);
     min-width: 280px;
     font-weight: 300;
+    margin: 18px auto;
+    width: 60%;
 }
 
 #portfolioBox:hover {
     transform: scale(1.05) rotate(-1deg);
+}
+
+.portfolio-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.portfolio-boxes {
+    display: flex;
+    justify-content: center;
+}
+
+#lunchFinder {
+    max-width: 80%;
+    background-image: linear-gradient(160deg, var(--primary-color) 0%, var(--secondary-color) 66%);
+    min-width: 280px;
+    text-align: center;
+    padding: 20px;
+}
+
+#lunchFinder img {
+    margin: 15px;
+    width: 100%;
+    border-radius: 16px;
+    max-width: 300px;
+    min-width: 100px;
+    
 }
 
 /* Media Query for Smaller Screens */
