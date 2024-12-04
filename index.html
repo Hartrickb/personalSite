@@ -1,134 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bennett's Homepage</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2NK9FHMBRV"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-2NK9FHMBRV');
-    </script>
-    <!-- Favicon -->
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bennett's Homepage</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2NK9FHMBRV"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-2NK9FHMBRV');
+	</script>
+	<!-- Favicon -->
+	<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-    <header>
-        <h1>Bennett Hartrick, Developer</h1>
-        <div class="header-icons">
-            <a href="mailto:hartrickb@gmail.com"><img src="assets/email.png" alt="Email"></a>
-            <a href="https://github.com/hartrickb" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/bhartrick/" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
-        </div>
-    </header>
-    <div class="boxes">
-        <div class="bento-box" id="statementBox">
-            A passionate full stack developer that's dedicated to building efficient, scalable solutions
-        </div>
-        <div class="bento-box" id="laptopBox">
-            <img src="assets/laptop.png" alt="Laptop">
-        </div>
-        <div class="bento-box" id="keysBox">
-            <h2>Key Achievements</h2>
-            <ul>
-                <li>Received a <span style="color:#9CDCFE">peer nominated company accolade</span> for automating complex manual tasks</li>
-                <li>Pioneered automation strategies that reduced manual task time by <span style="color:#9CDCFE">450+ hours per week</span></li>
-                <li>Built a messaging platform to bridge tickets, <span style="color:#9CDCFE">reducing response time by 20%</span></li>
-                <li>Designed <span style="color:#9CDCFE">15+ endpoints</span> to enable real-time reporting on over <span style="color:#9CDCFE">500,000 athletes</span></li>
-            </ul>
-        </div>
-        <div class="bento-box" id="jsonBox">
-            <img src="assets/json.png" alt="JSON">
-        </div>
-        <div class="bento-box" id="experienceBox">
-            <h2>Experience</h2>
-            <div class="job-block">
-                <img src="assets/teamBuildrLogo.png" alt="TeamBuildr" class="logo">
-                <div class="job-details">
-                    <h2>Backend Developer</h2>
-                    <h5>TeamBuildr</h5>
-                    <h5>2022 - Recent</h5>
-                    <div class="badges">
-                        <span class="badge">Node.js</span>
-                        <span class="badge">Javascript</span>
-                        <span class="badge">SQL</span>
-                        <span class="badge">AWS</span>
-                        <span class="badge">Express</span>
-                        <span class="badge">Git</span>
-                    </div>
-                    <div id="job-description">
-                        <h4>Noteables:</h4>
-                        <ul>
-                            <li>Lead developer on the “Sports Science Hub” to let coaches have analytical data on athletes</li>
-                            <li>Develop server-side logic using Node.js and Javascript</li>
-                            <li>Engineer, maintain, and optimize Lambda functions for AWS</li>
-                            <li>Design efficient and scalable SQL queries</li>
-                            <li>Provided mentorship to other developers</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="job-block">
-                <img src="assets/bandwidthLogo.png" alt="Bandwidth" class="logo">
-                <div class="job-details">
-                    <h2>Full Stack Developer</h2>
-                    <h5>Bandwidth</h5>
-                    <h5>2016 - 2022</h5>
-                    <div class="badges">
-                        <span class="badge">React</span>
-                        <span class="badge">AWS</span>
-                        <span class="badge">Node.js</span>
-                        <span class="badge">Python</span>
-                        <span class="badge">CI/CD</span>
-                        <span class="badge">Lambda</span>
-                    </div>
-                    <div id="job-description">
-                        <h4>Noteables:</h4>
-                        <ul>
-                            <li>Built and maintained full-stack web applications in Node.js, React, AWS Lambda, DynamoDB, and Express</li>
-                            <li>Developed RESTful APIs for internal departments and external customers</li>
-                            <li>Formed a team that automated manual tasks for the company</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bento-box" id="learningBox">
-            <h2>Currently Learning</h2>
-            <h5>- Advanced frontend</h5>
-            <h5>- Designing applications and prototyping</h5>
-        </div>
-    </div>
-    <div class="portfolio-boxes">
-        <div class="bento-box" id="portfolioBox">
-            <h2>Portfolio</h2>
-        </div>
-        <div class="bento-box" id="lunchFinder">
-            <a href="https://lunchfinder.netlify.app/" target="_blank" rel="noopener noreferrer">
-            <h2>Lunch Finder</h2>
-            <p>Find a spot based on zip code</p>
-            <div class="lunchDescription">
-                    <img src="assets/LunchFinder.png" alt="Lunch Finder"/>
-                    <ul class="lunchTechnologies">
-                        <li>React</li>
-                        <li>Netlify Lambda</li>
-                        <li>Node.js</li>
-                        <li>Google Maps SDK</li>
-                        <li>Cache</li>
-                    </ul>
-                </div>
-                <p>Algorithm to score places based on ratings, price, and number of ratings</p>
-            </a>
-            </div>
-    </div> 
-    <script src="script.js"></script>
+	<header>
+		<h1>Bennett Hartrick, Developer</h1>
+		<div class="header-icons">
+			<a href="mailto:hartrickb@gmail.com"><img src="assets/email.png" alt="Email"></a>
+			<a href="https://github.com/hartrickb" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+			<a href="https://www.linkedin.com/in/bhartrick/" target="_blank"><img src="assets/linkedin.png"
+					alt="LinkedIn"></a>
+		</div>
+	</header>
+	<div class="portfolio-boxes">
+		<div class="bento-box" id="portfolioBox">
+			<h2>Portfolio</h2>
+		</div>
+		<div class="bento-box" id="chefB">
+			<a href="https://recipeb.netlify.app/" target="_blank" rel="noopener noreferrer">
+				<h2>Chef B</h2>
+				<p>Recipe generator from foods you have on hand</p>
+				<div class="portfolioDescription">
+					<img src="assets/chefB.png" alt="Chef B" />
+					<ul class="portfolioTechnologies">
+						<li>AI</li>
+						<li>Vite</li>
+						<li>React</li>
+						<li>Netlify</li>
+						<li>Hooks</li>
+					</ul>
+				</div>
+				<p>AI generated recipe based on any foods</p>
+			</a>
+		</div>
+		<div class="bento-box" id="lunchFinder">
+			<a href="https://lunchfinder.netlify.app/" target="_blank" rel="noopener noreferrer">
+				<h2>Lunch Finder</h2>
+				<p>Find a spot based on zip code</p>
+				<div class="portfolioDescription">
+					<img src="assets/LunchFinder.png" alt="Lunch Finder" />
+					<ul class="portfolioTechnologies">
+						<li>React</li>
+						<li>Netlify Lambda</li>
+						<li>Node.js</li>
+						<li>Google Maps SDK</li>
+						<li>Cache</li>
+					</ul>
+				</div>
+				<p>Algorithm to score places based on ratings, price, and number of ratings</p>
+			</a>
+		</div>
+	</div>
+	<div class="boxes">
+		<div class="bento-box" id="statementBox">
+			A passionate full stack developer that's dedicated to building efficient, scalable solutions
+		</div>
+		<div class="bento-box" id="laptopBox">
+			<img src="assets/laptop.png" alt="Laptop">
+		</div>
+		<div class="bento-box" id="keysBox">
+			<h2>Key Achievements</h2>
+			<ul>
+				<li>Received a <span style="color:#9CDCFE">peer nominated company accolade</span> for automating complex manual
+					tasks</li>
+				<li>Pioneered automation strategies that reduced manual task time by <span style="color:#9CDCFE">450+ hours per
+						week</span></li>
+				<li>Built a messaging platform to bridge tickets, <span style="color:#9CDCFE">reducing response time by
+						20%</span></li>
+				<li>Designed <span style="color:#9CDCFE">15+ endpoints</span> to enable real-time reporting on over <span
+						style="color:#9CDCFE">500,000 athletes</span></li>
+			</ul>
+		</div>
+		<div class="bento-box" id="jsonBox">
+			<img src="assets/json.png" alt="JSON">
+		</div>
+		<div class="bento-box" id="experienceBox">
+			<h2>Experience</h2>
+			<div class="job-block">
+				<img src="assets/teamBuildrLogo.png" alt="TeamBuildr" class="logo">
+				<div class="job-details">
+					<h2>Backend Developer</h2>
+					<h5>TeamBuildr</h5>
+					<h5>2022 - Recent</h5>
+					<div class="badges">
+						<span class="badge">Node.js</span>
+						<span class="badge">Javascript</span>
+						<span class="badge">SQL</span>
+						<span class="badge">AWS</span>
+						<span class="badge">Express</span>
+						<span class="badge">Git</span>
+					</div>
+					<div id="job-description">
+						<h4>Noteables:</h4>
+						<ul>
+							<li>Lead developer on the “Sports Science Hub” to let coaches have analytical data on athletes</li>
+							<li>Develop server-side logic using Node.js and Javascript</li>
+							<li>Engineer, maintain, and optimize Lambda functions for AWS</li>
+							<li>Design efficient and scalable SQL queries</li>
+							<li>Provided mentorship to other developers</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="job-block">
+				<img src="assets/bandwidthLogo.png" alt="Bandwidth" class="logo">
+				<div class="job-details">
+					<h2>Full Stack Developer</h2>
+					<h5>Bandwidth</h5>
+					<h5>2016 - 2022</h5>
+					<div class="badges">
+						<span class="badge">React</span>
+						<span class="badge">AWS</span>
+						<span class="badge">Node.js</span>
+						<span class="badge">Python</span>
+						<span class="badge">CI/CD</span>
+						<span class="badge">Lambda</span>
+					</div>
+					<div id="job-description">
+						<h4>Noteables:</h4>
+						<ul>
+							<li>Built and maintained full-stack web applications in Node.js, React, AWS Lambda, DynamoDB, and Express
+							</li>
+							<li>Developed RESTful APIs for internal departments and external customers</li>
+							<li>Formed a team that automated manual tasks for the company</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bento-box" id="learningBox">
+			<h2>Currently Learning</h2>
+			<h5>- Advanced frontend</h5>
+			<h5>- Designing applications and prototyping</h5>
+		</div>
+	</div>
+	<script src="script.js"></script>
 </body>
+
 </html>
