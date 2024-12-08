@@ -335,6 +335,14 @@ hr {
     padding: 20px;
 }
 
+#tenzies {
+	max-width: 80%;
+	background-image: linear-gradient(160deg, var(--primary-color) 0%, var(--secondary-color) 66%);
+	min-width: 280px;
+	text-align: center;
+	padding: 20px;
+}
+
 #chefB {
 		max-width: 80%;
     background-image: linear-gradient(160deg, var(--primary-color) 0%, var(--secondary-color) 66%);
