@@ -6,7 +6,8 @@
 	--text-color: #ffffff;
 	--badge-bg-color: #A0BABA;
 	--badge-text-color: #000000;
-	--font-family: sans-serif;
+	--font-family: 'Montserrat', Arial, sans-serif;
+	--heading-font: 'Montserrat', Arial, sans-serif;
 	--box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 	--transition-speed: 0.3s;
 	--animation-duration: 0.6s;
@@ -35,6 +36,14 @@ body {
 	padding-left: 86px;
 	padding-right: 86px;
 	line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--heading-font);
+	letter-spacing: 0.02em;
 }
 
 h2 {
@@ -121,7 +130,7 @@ header h1 {
 	display: grid;
 	gap: 30px 50px;
 	grid-template-columns: calc(60% - 10px) calc(40% - 40px);
-	grid-template-rows: repeat(14, 100px);
+	grid-template-rows: repeat(3, 100px) auto auto auto auto auto;
 }
 
 /* Box Styles */
@@ -246,7 +255,7 @@ header h1 {
 
 #jsonBox {
 	grid-column: 2;
-	grid-row: 3 / 9;
+	grid-row: 5 / 9;
 	padding: 30px;
 	background-image: linear-gradient(208deg, var(--primary-color) 0%, var(--secondary-color) 66%);
 	min-width: 280px;
@@ -271,10 +280,12 @@ header h1 {
 
 #experienceBox {
 	grid-column: 1;
-	grid-row: 6 / -1;
+	grid-row: 6 / span 5;
 	background-image: linear-gradient(208deg, var(--primary-color) 0%, var(--secondary-color) 66%);
 	min-width: 280px;
 	font-weight: 300;
+	height: auto;
+	overflow: visible;
 }
 
 #experienceBox:hover {
@@ -307,7 +318,8 @@ header h1 {
 
 #learningBox {
 	grid-column: 2;
-	grid-row: 9 / 11;
+	grid-row: 3 / 5;
+	/* Moved up to align with keysBox */
 	background-image: linear-gradient(208deg, var(--primary-color) 0%, var(--secondary-color) 66%);
 	min-width: 280px;
 }
@@ -451,7 +463,6 @@ hr {
 	font-size: 28px;
 	font-weight: 500;
 	letter-spacing: 1px;
-	text-transform: uppercase;
 }
 
 #portfolioBox:hover {
@@ -719,27 +730,9 @@ hr {
 		padding: 0px 5%;
 	}
 
-	.bento-box.visible {
-		transform: scale(1.02);
-		box-shadow: 5px 5px 10px var(--accent-color);
-	}
-
-	#statementBox.visible {
-		transform: scale(1.02);
-	}
-
-	#experienceBox.visible {
-		transform: scale(1.02);
-	}
-
-	.badge {
-		font-size: small;
-		padding: 3px 8px;
-	}
-
-	#laptopBox {
-		order: 1;
+	.bento-box {
 		width: 100%;
+		height: auto;
 	}
 
 	#statementBox {
@@ -753,6 +746,8 @@ hr {
 
 	#experienceBox {
 		order: 4;
+		height: auto;
+		overflow: visible;
 	}
 
 	#jsonBox {
@@ -760,7 +755,8 @@ hr {
 	}
 
 	#learningBox {
-		order: 6;
+		order: 4;
+		/* Adjusted order to appear higher in mobile view */
 	}
 
 	#jsonBox img {
