@@ -160,7 +160,7 @@ header h1 {
 }
 
 .bento-box:hover {
-	transform: scale(1.02) rotate(1deg);
+	transform: scale(1.02);
 	box-shadow: 5px 5px 20px var(--accent-color);
 	z-index: 1;
 }
@@ -184,7 +184,7 @@ header h1 {
 }
 
 #statementBox:hover {
-	transform: scale(1.02) rotate(-2deg);
+	transform: scale(1.02);
 	box-shadow: 5px 5px 20px var(--accent-color);
 }
 
@@ -254,7 +254,7 @@ header h1 {
 }
 
 #jsonBox:hover {
-	transform: scale(1.05) rotate(-2deg);
+	transform: scale(1.05);
 }
 
 #jsonBox img {
@@ -278,7 +278,7 @@ header h1 {
 }
 
 #experienceBox:hover {
-	transform: scale(1.02) rotate(-1deg);
+	transform: scale(1.02);
 }
 
 #experienceBox h2 {
@@ -307,7 +307,7 @@ header h1 {
 
 #learningBox {
 	grid-column: 2;
-	grid-row: 10 / 12;
+	grid-row: 9 / 11;
 	background-image: linear-gradient(208deg, var(--primary-color) 0%, var(--secondary-color) 66%);
 	min-width: 280px;
 }
@@ -455,7 +455,7 @@ hr {
 }
 
 #portfolioBox:hover {
-	transform: scale(1.05) rotate(-1deg);
+	transform: scale(1.05);
 }
 
 .portfolio-box {
@@ -601,7 +601,7 @@ hr {
 
 		100% {
 			opacity: 1;
-			transform: scale(1.02) rotate(-1deg);
+			transform: scale(1.02);
 		}
 	}
 
@@ -618,7 +618,7 @@ hr {
 
 		100% {
 			opacity: 1;
-			transform: scale(1.02) rotate(-0.5deg);
+			transform: scale(1.02);
 		}
 	}
 
@@ -635,7 +635,7 @@ hr {
 
 		100% {
 			opacity: 1;
-			transform: scale(1.05) rotate(-1deg);
+			transform: scale(1.05);
 		}
 	}
 }
@@ -654,21 +654,21 @@ hr {
 
 	/* Hover animations for larger screens */
 	.bento-box:hover {
-		transform: scale(1.02) rotate(1deg) !important;
+		transform: scale(1.02) !important;
 		box-shadow: 5px 5px 20px var(--accent-color);
 		z-index: 1;
 	}
 
 	#statementBox:hover {
-		transform: scale(1.02) rotate(-2deg) !important;
+		transform: scale(1.02) !important;
 	}
 
 	#experienceBox:hover {
-		transform: scale(1.02) rotate(-1deg) !important;
+		transform: scale(1.02) !important;
 	}
 
 	#portfolioBox:hover {
-		transform: scale(1.05) rotate(-1deg) !important;
+		transform: scale(1.05) !important;
 	}
 
 	#lunchFinder:hover,
@@ -720,16 +720,16 @@ hr {
 	}
 
 	.bento-box.visible {
-		transform: scale(1.02) rotate(1deg);
+		transform: scale(1.02);
 		box-shadow: 5px 5px 10px var(--accent-color);
 	}
 
 	#statementBox.visible {
-		transform: scale(1.02) rotate(-1deg);
+		transform: scale(1.02);
 	}
 
 	#experienceBox.visible {
-		transform: scale(1.02) rotate(-0.5deg);
+		transform: scale(1.02);
 	}
 
 	.badge {
