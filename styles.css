@@ -73,33 +73,30 @@ header h1 {
 	gap: 18px;
 }
 
-.header-icons a {
-	color: #88B7D3;
-	text-decoration: none;
+.header-icon {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	border-radius: 15px;
-	background-color: rgba(136, 183, 211, 0.2);
-	transition: all var(--transition-speed) ease;
-	overflow: hidden;
-}
-
-.header-icons a img {
+	padding: 15px;
 	width: 60px;
 	height: 60px;
-	transition: transform var(--transition-speed);
+	border-radius: 12px;
+	background-color: rgba(255, 255, 255, 0.1);
+	transition: all var(--transition-speed) ease;
+	font-size: 24px;
+	color: var(--accent-color);
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.header-icons a:hover {
+.header-icon:hover {
 	background-color: var(--accent-color);
-	animation: shake 0.5s;
-	box-shadow: 0 0 20px var(--accent-color);
 	transform: translateY(-5px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.header-icons a:hover img {
-	transform: scale(1.1);
+.header-icon:hover i {
+	color: var(--text-color);
 }
 
 @keyframes shake {
@@ -555,6 +552,77 @@ hr {
 	letter-spacing: 0.5px;
 }
 
+/* Contact Section Styles */
+.contact-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px 0;
+	width: 100%;
+}
+
+#contactBox {
+	background-image: linear-gradient(208deg, var(--primary-color) 0%, var(--secondary-color) 66%);
+	width: 80%;
+	max-width: 800px;
+	text-align: center;
+	padding: 30px;
+}
+
+#contactBox h2 {
+	font-size: 28px;
+	color: var(--accent-color);
+	margin-bottom: 10px;
+}
+
+#contactBox p {
+	margin-bottom: 25px;
+	font-weight: 300;
+}
+
+.alternative-contact {
+	margin-top: 10px;
+	width: 100%;
+}
+
+.contact-methods {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	margin-top: 15px;
+}
+
+.contact-method {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px;
+	border-radius: 12px;
+	background-color: rgba(255, 255, 255, 0.1);
+	transition: all var(--transition-speed) ease;
+	width: 100px;
+}
+
+.contact-method i {
+	font-size: 24px;
+	margin-bottom: 8px;
+	color: var(--accent-color);
+}
+
+.contact-method span {
+	font-weight: 500;
+}
+
+.contact-method:hover {
+	background-color: var(--accent-color);
+	transform: translateY(-5px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-method:hover i {
+	color: var(--text-color);
+}
+
 /* Animation for visible elements on scroll */
 @media (max-width: 1199px) {
 	.bento-box {
@@ -648,6 +716,11 @@ hr {
 			opacity: 1;
 			transform: scale(1.05);
 		}
+	}
+
+	#contactBox {
+		width: 90%;
+		padding: 25px;
 	}
 }
 
@@ -778,6 +851,15 @@ hr {
 		margin: 15px auto;
 		max-width: 250px;
 	}
+
+	.contact-section {
+		margin: 30px 0;
+	}
+
+	#contactBox {
+		width: 100%;
+		order: 6;
+	}
 }
 
 @media (max-width: 600px) {
@@ -821,6 +903,23 @@ hr {
 	.badge {
 		font-size: 12px;
 		padding: 3px 8px;
+	}
+
+	.contact-methods {
+		gap: 15px;
+	}
+
+	.contact-method {
+		padding: 10px;
+		width: 80px;
+	}
+
+	.contact-method i {
+		font-size: 20px;
+	}
+
+	.contact-method span {
+		font-size: 14px;
 	}
 }
 

@@ -1,7 +1,6 @@
 /**
- * Handles animation of elements as they enter the viewport
- * Applies consistent scroll-based animations to elements
- * Different animation types based on element ID and screen size
+ * Main script for personal website animations and interactivity
+ * Handles element animations on scroll and responsive behavior
  */
 document.addEventListener("DOMContentLoaded", () => {
 	const boxes = document.querySelectorAll('.bento-box');
@@ -10,7 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Store original transform states to reset properly
 	const originalTransforms = {};
 
-	// Initialize all elements with proper initial state
+	/**
+	 * Initializes all elements with proper initial state based on screen size
+	 * Large screens show all elements immediately, smaller screens prepare for scroll animations
+	 */
 	function initializeElements() {
 		boxes.forEach(box => {
 			// Save original transform if any
@@ -29,7 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
-	// Apply scroll-based animations for smaller screens
+	/**
+	 * Sets up scroll-based animations for smaller screens
+	 * Uses IntersectionObserver to trigger animations when elements enter viewport
+	 */
 	function setupScrollAnimations() {
 		if (isLargeScreen) return;
 
@@ -44,56 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
 					element.style.opacity = '1';
 
 					// Apply specialized animations based on element ID
-					switch (id) {
-						case 'laptopBox':
-							element.dataset.animated = 'true';
-							break;
-						case 'jsonBox':
-							element.dataset.animated = 'true';
-							break;
-						case 'statementBox':
-							// Add slight rotation to statement box
-							element.style.transform = 'scale(1.02) rotate(-1deg)';
-							break;
-						case 'experienceBox':
-							// Add slight rotation to experience box
-							element.style.transform = 'scale(1.02) rotate(-0.5deg)';
-							break;
-						case 'portfolioBox':
-							element.style.transform = 'scale(1.05) rotate(-1deg)';
-							break;
-						case 'lunchFinder':
-						case 'tenzies':
-						case 'chefB':
-							// Add upward movement for portfolio items
-							element.style.transform = 'translateY(-10px)';
-							break;
-						default:
-							// Default animation for other boxes
-							element.style.transform = 'scale(1.02) rotate(1deg)';
-					}
+					applyElementAnimation(element, id);
 				} else {
 					// Don't completely remove visibility, just reduce opacity
 					// This prevents elements from disappearing suddenly
 					element.style.opacity = '0.2';
 
-					// Keep transformed elements visible but with reduced opacity
-					// Don't reset transform completely to prevent jarring transitions
-					if (element.classList.contains('visible')) {
-						// Apply a subtle out-of-view transform that doesn't completely hide the element
-						switch (id) {
-							case 'lunchFinder':
-							case 'tenzies':
-							case 'chefB':
-								element.style.transform = 'translateY(5px)';
-								break;
-							default:
-								element.style.transform = 'translateY(10px) scale(0.98)';
-						}
-					}
-
+					// Apply out-of-view transforms
+					applyOutOfViewTransform(element, id);
 					element.dataset.animated = 'false';
-					// Don't remove the visible class to prevent jarring transitions
 				}
 			});
 		}, {
@@ -106,8 +70,73 @@ document.addEventListener("DOMContentLoaded", () => {
 			observer.observe(box);
 		});
 
-		// Handle parallax effects based on scroll position
-		// This enhances the animation for elements already visible
+		// Setup scroll-based parallax effects
+		setupParallaxEffects();
+	}
+
+	/**
+	 * Applies the appropriate animation to an element based on its ID
+	 * Different elements receive different transform styles for visual variety
+	 * @param {HTMLElement} element - The DOM element to animate
+	 * @param {string} id - The ID of the element
+	 */
+	function applyElementAnimation(element, id) {
+		switch (id) {
+			case 'laptopBox':
+			case 'jsonBox':
+				element.dataset.animated = 'true';
+				break;
+			case 'statementBox':
+				// Add slight rotation to statement box
+				element.style.transform = 'scale(1.02) rotate(-1deg)';
+				break;
+			case 'experienceBox':
+				// Add slight rotation to experience box
+				element.style.transform = 'scale(1.02) rotate(-0.5deg)';
+				break;
+			case 'portfolioBox':
+				element.style.transform = 'scale(1.05) rotate(-1deg)';
+				break;
+			case 'lunchFinder':
+			case 'tenzies':
+			case 'chefB':
+				// Add upward movement for portfolio items
+				element.style.transform = 'translateY(-10px)';
+				break;
+			default:
+				// Default animation for other boxes
+				element.style.transform = 'scale(1.02) rotate(1deg)';
+		}
+	}
+
+	/**
+	 * Applies subtle transform to elements that are scrolled out of view
+	 * Prevents jarring transitions when elements leave the viewport
+	 * @param {HTMLElement} element - The DOM element to transform
+	 * @param {string} id - The ID of the element
+	 */
+	function applyOutOfViewTransform(element, id) {
+		// Keep transformed elements visible but with reduced opacity
+		// Don't reset transform completely to prevent jarring transitions
+		if (element.classList.contains('visible')) {
+			// Apply a subtle out-of-view transform that doesn't completely hide the element
+			switch (id) {
+				case 'lunchFinder':
+				case 'tenzies':
+				case 'chefB':
+					element.style.transform = 'translateY(5px)';
+					break;
+				default:
+					element.style.transform = 'translateY(10px) scale(0.98)';
+			}
+		}
+	}
+
+	/**
+	 * Sets up parallax effects for elements based on scroll position
+	 * Enhances the animation for elements already visible
+	 */
+	function setupParallaxEffects() {
 		window.addEventListener('scroll', () => {
 			const scrollPosition = window.scrollY;
 
@@ -131,7 +160,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		}, { passive: true }); // Add passive flag for better scroll performance
 	}
 
-	// Listen for window resize to handle responsive behavior
+	/**
+	 * Sets up listener for window resize events to handle responsive behavior
+	 * Reinitializes animations when screen size category changes
+	 */
 	function setupResizeListener() {
 		window.addEventListener('resize', () => {
 			const wasLargeScreen = isLargeScreen;
