@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
 				box.style.transform = originalTransforms[box.id];
 			} else {
 				// On smaller screens, prepare for scroll-based animations
-				box.classList.remove('visible');
+				// Don't remove visible class, just set initial transform
+				box.style.opacity = '0';
+				box.style.transform = 'translateY(20px)';
 			}
 		});
 	}
@@ -39,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				if (entry.isIntersecting) {
 					// Base visibility animation
 					element.classList.add('visible');
+					element.style.opacity = '1';
 
 					// Apply specialized animations based on element ID
 					switch (id) {
@@ -70,15 +73,32 @@ document.addEventListener("DOMContentLoaded", () => {
 							element.style.transform = 'scale(1.02) rotate(1deg)';
 					}
 				} else {
-					// Reset when out of view (only for smaller screens)
-					element.classList.remove('visible');
-					element.style.transform = originalTransforms[id] || 'none';
+					// Don't completely remove visibility, just reduce opacity
+					// This prevents elements from disappearing suddenly
+					element.style.opacity = '0.2';
+
+					// Keep transformed elements visible but with reduced opacity
+					// Don't reset transform completely to prevent jarring transitions
+					if (element.classList.contains('visible')) {
+						// Apply a subtle out-of-view transform that doesn't completely hide the element
+						switch (id) {
+							case 'lunchFinder':
+							case 'tenzies':
+							case 'chefB':
+								element.style.transform = 'translateY(5px)';
+								break;
+							default:
+								element.style.transform = 'translateY(10px) scale(0.98)';
+						}
+					}
+
 					element.dataset.animated = 'false';
+					// Don't remove the visible class to prevent jarring transitions
 				}
 			});
 		}, {
-			threshold: 0.2,
-			rootMargin: '0px 0px -10% 0px'
+			threshold: 0.1, // Reduced threshold for earlier detection
+			rootMargin: '0px 0px -5% 0px' // Adjusted root margin
 		});
 
 		// Observe all bento boxes
@@ -95,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				const id = box.id;
 
 				// Only apply parallax to elements that are currently visible/animated
-				if (box.classList.contains('visible') && box.dataset.animated === 'true') {
+				if (box.dataset.animated === 'true') {
 					switch (id) {
 						case 'laptopBox':
 							// Smooth upward movement on scroll
@@ -122,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				// Reset all transform styles to original state
 				boxes.forEach(box => {
 					box.style.transform = originalTransforms[box.id] || 'none';
+					box.style.opacity = '1'; // Ensure opacity is reset
 				});
 
 				// Reinitialize with new screen size

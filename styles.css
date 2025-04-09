@@ -558,8 +558,8 @@ hr {
 /* Animation for visible elements on scroll */
 @media (max-width: 1199px) {
 	.bento-box {
-		opacity: 0;
-		transform: translateY(20px);
+		transition: opacity 0.4s var(--animation-timing),
+			transform var(--animation-duration) var(--animation-timing);
 	}
 
 	.bento-box.visible {
